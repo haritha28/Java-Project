@@ -1,0 +1,41 @@
+
+1. The input/output package usually used with Java is:
+a.    java.input
+b.    java.io
+c.    java.inout
+d.    java.file 
+ 2. Can data flow through a given stream in both directions?
+a.    No; a stream has one direction only, input or output.
+b.    No; streams only work for output.
+c.    Yes; only one stream is needed to read and write a file.
+d.    Yes; but only one direction at a time. 
+
+3. What is the name of a stream that connects two running programs?
+a.    Program stream
+b.    Conduit
+c.    Pipe
+d.    Channel 
+
+4. Can a stream act as a data source for another stream?
+a.    No. Streams must be connected directly to physical devices.
+b.    No. Streams do not deal with data.
+c.    Yes. Some streams can be connected together.
+d.    Yes. An input stream can be connected to an output stream. 
+
+5. A stream that is intended for general purpose IO, not usually character data, is called...
+a.    Reader
+b.    Writer
+c.    Byte Stream
+d.    Character Stream 
+	
+6.. What is the name of the abstract base class for streams dealing with character input?
+a.    InputStream
+b.    OutputStream
+c.    Reader
+d.    Writer 
+
+7. Is the character data used inside a Java program exactly the same format as the character data in a text file written by Java?
+a.    No. Internally Java uses 8-bit character data, but text files always use ASCII.
+b.    No. Internally Java programs always use 16-bit char data; but text files are written in UTF format, which is different.
+c.    Yes. Java uses the same format for characters inside a program and in text files.
+d.    Yes. Character data has always used the same format for all computers and all files. 
