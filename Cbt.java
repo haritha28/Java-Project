@@ -212,10 +212,12 @@ class Reminder extends Student{
 
                           
 class Faculty extends Cbt{
+
+  public void author()
   public void choose()
     {
         Scanner s = new Scanner(System.in);
-        try(BufferedReader br3 = new BufferedReader(new FileReader("data.txt"))){
+        try(BufferedReader br3 = new BufferedReader(new FileReader("fdata.txt"))){
               System.out.println("Enter the username");
               String s2=s.nextLine();                   
               System.out.println("Enter the password");
@@ -233,8 +235,10 @@ class Faculty extends Cbt{
               }
               if(ch1==1&&ch2==1){
                   System.out.println("Login sucess");
-                  Student stu=new Student(); 
-                  stu.test();         
+                  Faculty f= new Faculty();
+                  author();
+                  //Student stu=new Student(); 
+                 /// stu.test();         
               }
               else{
                   System.out.println("Login failed");                                
