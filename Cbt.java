@@ -7,9 +7,10 @@ import java.util.Timer;
 import java.util.TimerTask;
 
  class Student extends Cbt{ 
-
+      int marks=0;
       public void choose()
     {
+      
         try(BufferedReader br3 = new BufferedReader(new FileReader("data.txt"))){
               System.out.println("Enter the username");
               String s2=s.nextLine();                    
@@ -28,9 +29,7 @@ import java.util.TimerTask;
                                                     
               if(ch1==1&&ch2==1){
                   System.out.println("Login sucess");
-                  test();
-                  //Student stu=new Student(); 
-                  //stu.test();         
+                  test();        
                                }
               else{
                   System.out.println("Login failed");                                
@@ -67,12 +66,9 @@ import java.util.TimerTask;
                            // }
           public void mcq() {
 
-             
-                             int marks=0;
-
-                       try( BufferedReader br = new BufferedReader(new FileReader("questions.txt")))
+                       try( BufferedReader br = new BufferedReader(new FileReader("mcq.txt")))
                         {
-                          BufferedReader br1 = new BufferedReader(new FileReader("answers.txt"));
+                          BufferedReader br1 = new BufferedReader(new FileReader("mans.txt"));
 
                           String current;
                            
@@ -114,7 +110,42 @@ import java.util.TimerTask;
    // System.out.println("Score" + marks);
  
   public void fillIn(){
+           try( BufferedReader br = new BufferedReader(new FileReader("fillin.txt")))
+                        {
+                          BufferedReader br1 = new BufferedReader(new FileReader("fans.txt"));
 
+                          String current;
+                           
+                          
+                          int flag=0;
+                          
+                          while ((current = br.readLine()) != null ) {
+
+                            
+                            System.out.println(current);
+                            flag++;
+                            if(flag==1){
+                              String n =s.nextLine();
+                              String ans = br1.readLine();
+                              if(n.equals(ans)){
+                                    System.out.println("Correct!");
+                                      marks++;
+                                                }
+                                  
+                              else{
+                                    System.out.println("Wrong!");
+                                  }
+                              flag=0;
+                              System.out.println("Score"+ marks);
+                             }
+                            
+
+                        }
+                          
+                        }
+                     catch (IOException e) {
+                          e.printStackTrace();
+                        }
   }
   public void oneWord(){
 
