@@ -1,0 +1,5 @@
+1.A ____________ is approximately 1,000 bytes.
+2.____________are the fastest and most expensive computers.
+3.A string of ____________ 0s and 1s is called a byte.
+4. ____________ is the set of computer instructions or programs that enables the hardware to perform different tasks.
+5. ____________ are computers that excel at executing many different computer programs at the same time.
