@@ -148,6 +148,42 @@ import java.util.TimerTask;
                         }
   }
   public void oneWord(){
+          try( BufferedReader br = new BufferedReader(new FileReader("oneq.txt")))
+                        {
+                          BufferedReader br1 = new BufferedReader(new FileReader("oans.txt"));
+
+                          String current;
+                           
+                          
+                          int flag=0;
+                          
+                          while ((current = br.readLine()) != null ) {
+
+                            
+                            System.out.println(current);
+                            flag++;
+                            if(flag==1){
+                              String n =s.nextLine();
+                              String ans = br1.readLine();
+                              if(n.equals(ans)){
+                                    System.out.println("Correct!");
+                                      marks++;
+                                                }
+                                  
+                              else{
+                                    System.out.println("Wrong!");
+                                  }
+                              flag=0;
+                              System.out.println("Score"+ marks);
+                             }
+                            
+
+                        }
+                          
+                        }
+                     catch (IOException e) {
+                          e.printStackTrace();
+                        }
 
   }
         
