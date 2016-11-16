@@ -8,16 +8,41 @@ import java.util.TimerTask;
 
 
 
-class Student { 
+ class Student { 
+
+  Scanner s = new Scanner(System.in);
+
   public void test() throws FileNotFoundException,IOException{      
   new Reminder(5*60);
-  Scanner s = new Scanner(System.in);
-        System.out.println("Task scheduled.");
-         int marks=0;
-        BufferedReader br1 = new BufferedReader(new FileReader("answers.txt"));
+  System.out.println("Task scheduled.");
+  
+    int ch=0;
+       // public void option(){
 
-    try (BufferedReader br = new BufferedReader(new FileReader("questions.txt")))
+
+          System.out.println("Enter the option\n");
+          System.out.println("1.MCQ \n 2.Fill in the blanks \n 3.One Word ");
+          ch=s.nextInt();
+          switch(ch)
+          {
+            case 1:mcq();
+                    break;
+            case 2:fillIn();
+                    break;
+            case 3: oneWord();
+                    break;
+            default: System.out.println("Invalid option");
+          }
+        }
+                           // }
+          public void mcq() {
+
+             
+         int marks=0;
+
+   try( BufferedReader br = new BufferedReader(new FileReader("questions.txt")))
     {
+      BufferedReader br1 = new BufferedReader(new FileReader("answers.txt"));
 
       String current;
        
@@ -41,6 +66,7 @@ class Student {
                 System.out.println("Wrong!");
               }
           flag=0;
+          System.out.println("Score"+ marks);
         }
         
 
@@ -52,11 +78,21 @@ class Student {
     }
 
         }
-    //System.out.println("Score"+marks);
+   // System.out.println("Score"+marks);
 
    // System.out.println("Score" + marks);
+ 
+  public void fillIn(){
+
   }
-//}
+  public void oneWord(){
+
+  }
+        
+ }
+        
+       
+
 class Reminder extends Student{
     Timer timer;
 
@@ -76,14 +112,13 @@ class Reminder extends Student{
     } 
 }
 
-class proj{
+class cbt{
   public static void main(String[] args) throws FileNotFoundException,IOException{
     Scanner s =new Scanner(System.in);
-    System.out.println("Enter whether you are a faculty or a student");
+    System.out.println("Faculty or Student?");
     String user =s.nextLine();
     if(user.equals("student")){
-    try(BufferedReader br3 = new BufferedReader(new FileReader("Document.txt"))){
-          //if(user.equals("Student")||user.equals("student")){
+    try(BufferedReader br3 = new BufferedReader(new FileReader("data.txt"))){
               System.out.println("Enter the username");
               String s2=s.nextLine();                     //Error condition unique userid and password should be maintained *
               System.out.println("Enter the password");
@@ -113,7 +148,7 @@ class proj{
     }
   }
     else{
-      System.out.println("Cant login");
+      System.out.println("Invalid Username or Password");
     }
   }
 }
